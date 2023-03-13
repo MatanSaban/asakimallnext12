@@ -1,0 +1,170 @@
+.tableWrapper {
+    width: 95%;
+    margin: 0 auto;
+    padding: px;
+    overflow-y: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 #00000060;
+    table {
+        background-color: #00000040;
+        padding: 0;
+        border-radius: 10px;
+        border: none;
+        margin: 0 auto;
+        width: 100%;
+        text-align: right;
+        font-size: 0.8rem;
+        transition: all 0.3s ease;
+        thead {
+            tr {
+                background-color: #000000;
+                color: white;
+                border: none;
+                th {
+                    font-weight: 500;
+                    padding: 10px;
+                    margin: 0;
+                    border-left: 1px solid rgb(123, 123, 123);
+                    small {
+                        font-weight: 300;
+                        font-size: 0.7rem;
+                        letter-spacing: 1px;
+                    }
+                }
+                th:first-of-type {
+                    margin: 0 auto;
+                    text-align: center;
+                    border-right: none;
+                    border-radius: 0 10px 0 0;
+                    padding: 10px;
+                    input {
+                        margin: 0;
+                        text-align: center;
+                    }
+                }
+                th:last-of-type {
+                    border-left: none;
+                    border-radius: 10px 0 0 0;
+                    padding-left: 0;
+                }
+            }
+        }
+        tbody {
+            tr:nth-child(odd) {
+                background-color: #dbdbdb;
+            }
+            tr:nth-child(even) {
+                background-color: #bbbbbb;
+            }
+            tr:last-of-type {
+                td {
+                    border-bottom: none;
+                }
+                td:first-of-type {
+                    border-radius: 0 0 10px 0;
+                }
+                td:last-of-type {
+                    border-radius: 0 0 0 10px;
+                }
+            }
+            tr {
+                border: none;
+                &:hover {
+                    background-color: #969696;
+                }
+                td {
+                    padding: 0 10px;
+                    border-bottom: 1px solid black;
+                    margin: 0;
+                    border-left: 1px solid black;
+                    i {
+                        height: fit-content;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 10px;
+                    }
+                }
+                td.saleprice,
+                td.price,
+                td.title {
+                    > div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                }
+                td.onsaleq,
+                td.publishq {
+                    font-size: 1.5rem;
+                    text-align: center;
+                    i.checkIcon {
+                        color: green;
+                    }
+                    i.closeIcon {
+                        color: rgb(254, 68, 68);
+                    }
+                }
+                td:first-of-type {
+                    border-right: none;
+                    text-align: center;
+                    padding: 0;
+                }
+                td:last-of-type {
+                    border-left: none;
+                    text-align: center;
+                }
+                td.shortDesc,
+                td.longDesc,
+                td.mainImage {
+                    div {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        img {
+                            object-fit: cover;
+                        }
+                    }
+                }
+                .icons {
+                    font-size: 1.2rem;
+                    display: flex;
+                    justify-content: space-around;
+                    .editIcon {
+                        color: rgb(113, 76, 7);
+                        cursor: pointer;
+                        margin: 0 1px;
+                        &:hover {
+                            color: rgb(78, 52, 5);
+                        }
+                    }
+                    .watchIcon {
+                        color: rgb(80, 80, 197);
+                        cursor: pointer;
+                        margin: 0 1px;
+                        &:hover {
+                            color: rgb(60, 60, 143);
+                        }
+                    }
+                }
+                td.actions {
+                    font-size: larger;
+                    .icons {
+                        display: flex;
+                        justify-content: space-around;
+                        .editIcon {
+                            color: black;
+                        }
+                        .deleteIcon {
+                            color: rgb(189, 14, 14);
+                        }
+                        i {
+                            font-style: normal;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

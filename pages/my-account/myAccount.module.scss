@@ -1,0 +1,55 @@
+/* My Account Layout + Store Management Layout */
+.MyAccountLayout,
+.storeManagmentPage {
+    display: flex;
+    justify-content: flex-start;
+
+    main {
+        margin: 50px auto;
+        width: 70%;
+        text-align: center;
+    }
+    aside {
+        width: 15%;
+        padding: 50px 0 0 0;
+        z-index: 2;
+        background: linear-gradient(290deg, whitesmoke, white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        padding-top: 150px;
+        ul {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            li {
+                margin: 10px auto;
+                width: 100%;
+                text-align: center;
+                ul {
+                    padding: 0 10px 0 0;
+                }
+                a.MyStoreManagement {
+                    button {
+                        background-color: #4476d2;
+                    }
+                }
+                button {
+                    font-size: 1rem;
+                    padding: 5px;
+                    width: 150px;
+                    transition: all 0.3s ease;
+                    &:hover {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* End Of My Account Layout + Store Management Layout */

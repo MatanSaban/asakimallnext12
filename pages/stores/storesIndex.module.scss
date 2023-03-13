@@ -1,0 +1,14 @@
+/* phone shop model */
+main.index.storesPage {
+    .archive {
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20%;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px;
+        position: relative;
+        z-index: 0;
+    }
+}
+/* End of phone shop model */

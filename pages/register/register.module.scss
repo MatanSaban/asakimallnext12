@@ -1,0 +1,15 @@
+.registerPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    button {
+        padding: 5px 10px;
+        font-size: 1.2rem;
+        border-radius: 10px;
+    }
+    .formWrapper {
+        width: 50%;
+        max-width: 50%;
+    }
+}

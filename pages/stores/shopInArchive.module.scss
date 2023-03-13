@@ -1,0 +1,120 @@
+.shop {
+    position: relative;
+    .phone {
+        border: 20px solid black;
+        border-radius: 50px;
+        height: 500px;
+        max-height: 500px;
+        min-height: 500px;
+        max-width: 80%;
+        padding: 5px 0px 0px 0px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: white;
+        &:after {
+            content: "";
+            width: 100%;
+            height: 20px;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            z-index: -1;
+            transform: translateX(-50%);
+            box-shadow: 0 30px 20px #0000005b;
+        }
+        .pergula {
+            background-color: transparent;
+            width: calc(100% + 50px);
+            height: 20%;
+            position: absolute;
+            top: -20px;
+            left: -25px;
+            border-radius: 50px 50px 0 0;
+            box-shadow: 0px -20px 35px -20px rgb(0 0 0 / 52%);
+            perspective: 100px;
+            .pergula_up {
+                background-color: rgb(188, 40, 40);
+                width: 100%;
+                height: 40%;
+                margin-top: -5px;
+                border-radius: inherit;
+                position: relative;
+                display: flex;
+                transform: perspective(100px) rotateX(5deg);
+                .wineRed {
+                    background-color: transparent;
+                    width: 50%;
+                    height: 100%;
+                    position: relative;
+                }
+                .offWhite {
+                    background-color: white;
+                    width: 50%;
+                    height: 100%;
+                    position: relative;
+                }
+            }
+            .pergula_down {
+                width: calc(100% + 16px);
+                height: 30%;
+                margin: 0 -8px;
+                border-radius: 0;
+                position: relative;
+                display: flex;
+                transform: perspective(144px) rotateX(1deg);
+                .wineRed {
+                    background-color: rgb(149, 12, 12);
+                    width: 50%;
+                    height: 100%;
+                    position: relative;
+                    border-radius: 0 0 50px 50px;
+                    box-shadow: 0 0 60px 6px #00000085;
+                }
+                .offWhite {
+                    background-color: rgb(237, 237, 237);
+                    width: 50%;
+                    height: 100%;
+                    position: relative;
+                    border-radius: 0 0 50px 50px;
+                    box-shadow: 0 0 60px 6px #00000085;
+                }
+            }
+        }
+        .shopData {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-position: center;
+            background-repeat: repeat;
+            background-size: cover;
+            img {
+                width: calc(100% + 20px);
+                object-fit: cover;
+            }
+        }
+        .storeButton {
+            width: 100%;
+            position: relative;
+            a {
+                width: 100%;
+                height: 100%;
+                button {
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgb(253, 214, 86);
+                    border-radius: 0 0 30px 30px;
+                    border: none;
+                    padding: 10px 0;
+                    cursor: pointer;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+/* End of phone shop model */

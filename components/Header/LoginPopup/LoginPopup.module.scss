@@ -1,0 +1,140 @@
+@import "../../../styles/colors";
+.loginPopup {
+    form {
+        min-width: 40%;
+        position: relative;
+        div {
+            width: 100%;
+            flex-direction: column !important;
+            i {
+                position: absolute;
+                left: 5px;
+                top: calc(50% + 2px);
+                cursor: pointer;
+                font-style: normal;
+                transform: translateY(-50%);
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+/*popup css*/
+.popupModal.showPopup {
+    opacity: 1;
+    backdrop-filter: blur(7px);
+}
+.popupModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #00000080;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    transition: all 0.3s ease;
+    .popupBackground {
+        z-index: 0;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+    }
+    .popupContent.showPopup {
+        margin-top: 0;
+        opacity: 1;
+        z-index: 999;
+    }
+    .popupContent {
+        position: relative;
+        padding: 20px 0 40px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        box-shadow: 0 0 10px #00000061;
+        width: 50%;
+        height: fit-content;
+        margin-top: -200px;
+        background-color: white;
+        border-radius: 50px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        form {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            div {
+                width: 100%;
+                position: relative;
+                div {
+                    position: relative;
+                    margin: 10px auto;
+                    width: 100%;
+                    label {
+                        position: absolute;
+                        top: -10px;
+                        right: 15px;
+                        padding: 0 5px;
+                        background-color: white;
+                    }
+                    input {
+                        padding: 15px;
+                        font-size: 1.2rem;
+                        width: max-content;
+                        width: 100%;
+                        border-radius: 15px;
+
+                        &:-webkit-autofill:focus,
+                        &:-webkit-autofill:active,
+                        &:-webkit-autofill:hover,
+                        &:-webkit-autofill {
+                            box-shadow: 0 0 0 30px white inset !important;
+                            outline: none;
+                        }
+                    }
+
+                    i {
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0;
+                        height: fit-content;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+            button {
+                margin: 10px auto;
+                text-align: center;
+                border-radius: 15px;
+                font-size: 1.3rem;
+            }
+        }
+        .closePopup {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 35px;
+            height: 35px;
+            padding: 0;
+            background-color: $danger;
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            &:hover {
+                background-color: rgb(128, 28, 28);
+            }
+        }
+    }
+}
+/*end of popup css*/

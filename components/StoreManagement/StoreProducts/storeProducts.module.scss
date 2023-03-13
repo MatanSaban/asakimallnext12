@@ -1,0 +1,234 @@
+/* popup modal CSS */
+.popupWrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.566);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .popup {
+        background-color: white;
+        border-radius: 15px 20px 20px 15px;
+        padding: 20px;
+        box-shadow: 0 0 10px black;
+        position: relative;
+        width: fit-content;
+        height: 70vh;
+        overflow-y: scroll;
+
+        h3 {
+            margin: 20px 0 5px 0;
+        }
+        p {
+            margin: 0 0 20px 0;
+            padding: 0;
+        }
+
+        .closePopup {
+            color: red;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+    }
+}
+
+.manageProducts {
+    .editBoard {
+        box-shadow: 0 0 10px black;
+        width: 50%;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 20px;
+        > div {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+    .handlers {
+        width: 90%;
+        margin: 0 auto 20px auto;
+        text-align: right;
+        > button {
+            box-shadow: 5px 5px 20px 0px #00000022;
+            color: white;
+            text-shadow: 0 0 10px black;
+            min-width: 130px;
+        }
+        button.deleteChecked {
+            background-color: rgb(188, 60, 60);
+            &:hover {
+                background-color: rgb(200, 87, 87);
+            }
+        }
+    }
+    .tableWrapper {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0;
+        overflow-y: auto;
+        border-radius: 20px;
+        box-shadow: 0 0 20px 0 #00000060;
+        table {
+            background-color: #00000040;
+            padding: 0;
+            border-radius: 10px;
+            border: none;
+            margin: 0 auto;
+            width: 100%;
+            text-align: right;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            thead {
+                tr {
+                    background-color: #000000;
+                    color: white;
+                    border: none;
+                    th {
+                        font-weight: 500;
+                        padding: 10px;
+                        margin: 0;
+                        border-left: 1px solid rgb(123, 123, 123);
+                        small {
+                            font-weight: 300;
+                            font-size: 0.7rem;
+                            letter-spacing: 1px;
+                        }
+                    }
+                    th:first-of-type {
+                        padding: 0;
+                        margin: 0 auto;
+                        text-align: center;
+                        border-right: none;
+                        border-radius: 0 10px 0 0;
+                        input {
+                            margin: 0 10px;
+                            text-align: center;
+                        }
+                    }
+                    th:last-of-type {
+                        border-left: none;
+                        border-radius: 10px 0 0 0;
+                        padding-left: 0;
+                    }
+                }
+            }
+            tbody {
+                tr:nth-child(odd) {
+                    background-color: #dbdbdb;
+                }
+                tr:nth-child(even) {
+                    background-color: #bbbbbb;
+                }
+                tr:last-of-type {
+                    td {
+                        border-bottom: none;
+                    }
+                    td:first-of-type {
+                        border-radius: 0 0 10px 0;
+                    }
+                    td:last-of-type {
+                        border-radius: 0 0 0 10px;
+                    }
+                }
+                tr {
+                    border: none;
+                    &:hover {
+                        background-color: #969696;
+                    }
+                    td {
+                        padding: 0 10px;
+                        border-bottom: 1px solid black;
+                        margin: 0;
+                        border-left: 1px solid black;
+                    }
+                    td.saleprice,
+                    td.price,
+                    td.title {
+                        > div {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                        }
+                    }
+                    td.onsaleq,
+                    td.publishq {
+                        font-size: 1.5rem;
+                        text-align: center;
+                        i.checkIcon {
+                            color: green;
+                        }
+                        i.closeIcon {
+                            color: rgb(254, 68, 68);
+                        }
+                    }
+                    td:first-of-type {
+                        border-right: none;
+                        text-align: center;
+                        padding: 0;
+                    }
+                    td:last-of-type {
+                        border-left: none;
+                        text-align: center;
+                    }
+                    td.shortDesc,
+                    td.longDesc,
+                    td.mainImage {
+                        div {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                    }
+                    .icons {
+                        font-size: 1.2rem;
+                        display: flex;
+                        justify-content: space-around;
+                        .editIcon {
+                            color: rgb(113, 76, 7);
+                            cursor: pointer;
+                            margin: 0 1px;
+                            &:hover {
+                                color: rgb(78, 52, 5);
+                            }
+                        }
+                        .watchIcon {
+                            color: rgb(80, 80, 197);
+                            cursor: pointer;
+                            margin: 0 1px;
+                            &:hover {
+                                color: rgb(60, 60, 143);
+                            }
+                        }
+                    }
+                    td.actions {
+                        font-size: larger;
+                        .icons {
+                            display: flex;
+                            justify-content: space-around;
+                            .editIcon {
+                                color: black;
+                            }
+                            .deleteIcon {
+                                color: rgb(189, 14, 14);
+                            }
+                            i {
+                                font-style: normal;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.previewPopup {
+    height: fit-content !important;
+}

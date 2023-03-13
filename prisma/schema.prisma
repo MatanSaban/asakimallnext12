@@ -1,0 +1,120 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+model Users {
+  id            String        @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt     DateTime?     @default(now())
+  email         String        @unique
+  mobilephone   String        @unique
+  // verified     Boolean
+  firstname     String
+  lastname      String
+  password      String
+  token         String?       @unique
+  setToken      Boolean
+  profileimage  String?
+  coverimage    String?
+  address       Json?
+  role          Role?         @default(USER)
+  hasStore      Boolean?
+  sellerId      String?       @db.ObjectId
+  sellerObj     Sellers?
+  cart          String[] // get product id's
+  fullOrdersIds String[]      @db.ObjectId
+  fullOrders    FullOrders[]
+  storeOrders   StoreOrders[]
+}
+
+model FullOrders {
+  id             String        @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt      DateTime?     @default(now())
+  status         String // 1 of 5 stores completed / on progress , 2 of 5 | stores 
+  userId         String        @db.ObjectId
+  user           Users         @relation(fields: [userId], references: [id])
+  storeOrders    StoreOrders[]
+  storeOrdersIds String[]      @db.ObjectId
+}
+
+model StoreOrders {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt    DateTime?   @default(now())
+  status       String // progress / completed / canceled / refunded?
+  products     Products[]  @relation(fields: [productsIds], references: [id])
+  productsIds  String[]    @db.ObjectId
+  productsObj  Json
+  storeId      String      @db.ObjectId
+  store        Stores      @relation(fields: [storeId], references: [id])
+  userId       String      @db.ObjectId
+  user         Users       @relation(fields: [userId], references: [id])
+  FullOrders   FullOrders? @relation(fields: [fullOrdersId], references: [id])
+  fullOrdersId String?     @db.ObjectId
+}
+
+model Stores {
+  id               String        @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt        DateTime?     @default(now())
+  published        Boolean
+  name             String
+  slug             String        @unique
+  products         Products[]
+  productsIdsArray String[]
+  owner            Sellers?      @relation(fields: [sellersId], references: [id])
+  sellersId        String        @db.ObjectId
+  coverImage       String?
+  categoryId       String?       @db.ObjectId
+  category         Categories?   @relation(fields: [categoryId], references: [id])
+  storeDesign      Json?
+  StoreOrders      StoreOrders[]
+}
+
+model Products {
+  id                String        @id @default(auto()) @map("_id") @db.ObjectId
+  productIdentifier Int
+  name              String
+  mainImage         String?
+  gallery           String[]
+  price             Int
+  publishState      Boolean       @default(false)
+  onsale            Boolean       @default(false)
+  saleprice         Int?
+  storeId           String?       @db.ObjectId
+  store             Stores?       @relation(fields: [storeId], references: [id])
+  storeOrdersIds    String[]      @db.ObjectId
+  storeOrders       StoreOrders[] @relation(fields: [storeOrdersIds], references: [id])
+  categoriesId      String        @db.ObjectId
+  category          Categories    @relation(fields: [categoriesId], references: [id])
+  shortdescription  String?
+  description       String?
+}
+
+model Sellers {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime? @default(now())
+  store     Stores[]
+  storeId   String?
+  user      Users     @relation(fields: [usersId], references: [id])
+  usersId   String    @unique @db.ObjectId
+}
+
+model Categories {
+  id       String     @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  image    String
+  stores   Stores[]
+  products Products[]
+}
+
+enum Role {
+  ADMIN
+  USER
+  SELLER
+}

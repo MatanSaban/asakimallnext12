@@ -1,0 +1,173 @@
+@import "../../../styles/colors";
+#popUpWrapper {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 0;
+    background-color: #00000060;
+    backdrop-filter: blur(0);
+    transition: all 0.5s ease;
+    .background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 4;
+    }
+}
+#popUpWrapper.showCart {
+    opacity: 1;
+    backdrop-filter: blur(5px);
+    transition: all 0.5s ease;
+}
+#cartPopup {
+    position: absolute;
+    left: calc(-21%);
+    top: 0;
+    height: 90vh;
+    width: 20vw;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+    padding-top: 10vh;
+    z-index: 5;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.5s ease;
+    .closeButton {
+        position: absolute;
+        top: 110px;
+        left: 10px;
+        background-color: $danger;
+        border-radius: 50%;
+        color: white;
+        width: 35px;
+        height: 35px;
+        transition: all 0.3s ease;
+        &:after {
+            content: "סגירת העגלה";
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $mainColor;
+            padding: 2px;
+            border-radius: 10px;
+            color: black;
+            width: 0;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+        &:hover {
+            transform: rotate(360deg);
+            &:after {
+                width: fit-content;
+                opacity: 1;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 2rem;
+        width: 100%;
+        text-align: center;
+    }
+    button.toPayment {
+        background-color: green;
+        color: white;
+        padding: 10px;
+        border: none;
+        font-weight: bold;
+        font-size: 1.3rem;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+    .stores {
+        min-height: 50%;
+        padding: 0 20px 0 40px;
+        .store {
+            padding: 10px;
+            border-radius: 15px;
+            margin: 20px 0;
+            height: 250px;
+            overflow-y: auto;
+            box-shadow: 0 0 10px black;
+            position: relative;
+            > button {
+                background: none;
+                color: red;
+                text-shadow: 0 0 10px black;
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-size: 1.1rem;
+            }
+            .product {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+                background-color: white;
+                padding: 10px;
+                border-radius: 15px;
+                margin: 0 0 20px 0;
+                transition: all 0.15s ease;
+                .removeProduct {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: none;
+                    color: $danger;
+                    text-shadow: 0 0 10px black;
+                    padding: 5px;
+                    font-size: 1.1rem;
+                    &:hover {
+                        font-weight: bolder;
+                    }
+                }
+                &:hover {
+                    background-color: adjust-hue(
+                        $color: $mainColor,
+                        $degrees: 0
+                    );
+                }
+                .productImageAndName {
+                    width: 40%;
+                    // border: 1px solid black;
+                    height: 100%;
+                    position: relative;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        object-fit: contain;
+                    }
+                }
+                .productTitleAndStore {
+                    font-size: 0.9rem;
+                    font-weight: 400;
+                    h4 {
+                        font-size: 0.9rem;
+                        font-weight: 400;
+                    }
+                }
+                .productPriceAndAmount {
+                    font-weight: 400;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+#cartPopup.showCart {
+    left: 0;
+    transition: all 0.5s ease;
+}
+#cartPopup.hideCart {
+    left: calc(-21%);
+    transition: all 0.5s ease;
+}

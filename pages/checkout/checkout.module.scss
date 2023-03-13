@@ -1,0 +1,118 @@
+.wrapper {
+    width: 80vw;
+    margin: 50px auto;
+    text-align: center;
+    .content {
+        display: flex;
+        justify-content: space-between;
+        > div {
+            width: 45%;
+        }
+        .userDetails {
+            .form {
+                position: sticky;
+                top: 15vh;
+                right: 0;
+                .section {
+                    .column {
+                        label {
+                            font-size: 1.1rem;
+                            font-weight: bold;
+                        }
+                        input {
+                            font-size: 1.2rem;
+                        }
+                        .phone,
+                        .email,
+                        .idNumber {
+                            direction: ltr;
+                        }
+                        .phone::-webkit-outer-spin-button,
+                        .phone::-webkit-inner-spin-button,
+                        .idNumber::-webkit-outer-spin-button,
+                        .idNumber::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .cartDetails {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: fit-content;
+            .cart {
+                border: 2px solid #bfbfbf;
+                border-left: none;
+                padding: 0;
+                table {
+                    thead {
+                        tr {
+                            th {
+                                background-color: #f0f0f0;
+                                border-left: 2px solid #bfbfbf;
+                                border-bottom: 2px solid #bfbfbf;
+                                padding: 10px;
+                                text-align: right;
+                            }
+                        }
+                    }
+                    tbody {
+                        text-align: right;
+                        tr {
+                            &:last-child,
+                            &:nth-last-child(2),
+                            &:nth-last-child(3) {
+                                td {
+                                    text-align: right;
+                                    border-left: none;
+                                    &:last-child {
+                                        border-left: 2px solid #bfbfbf;
+                                        text-align: left;
+                                        letter-spacing: 1px;
+                                    }
+                                }
+                            }
+                            td.image {
+                                text-align: center;
+                                img {
+                                    object-fit: contain;
+                                    width: 100%;
+                                    height: 100%;
+                                    aspect-ratio: 1/1;
+                                }
+                            }
+                            td {
+                                border-bottom: 2px solid #bfbfbf;
+                                padding: 10px;
+                                border-left: 2px solid #bfbfbf;
+                            }
+                            &:last-child {
+                                td {
+                                    border-bottom: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .store {
+                    .product {
+                        display: flex;
+                        border: 1px solid black;
+                    }
+                }
+            }
+            button {
+                margin-top: 20px;
+                width: 240px;
+                color: white;
+                text-shadow: 0 0 10px black;
+                font-size: 1.3rem;
+                font-weight: bold;
+            }
+        }
+    }
+}

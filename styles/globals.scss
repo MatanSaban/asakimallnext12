@@ -1,0 +1,189 @@
+@import "colors";
+@font-face {
+    font-family: "Ploni";
+    src: url("../public/static/fonts/‏‏Ploni/ploni-ultralight-aaa.otf");
+    font-weight: 200;
+}
+@font-face {
+    font-family: "Ploni";
+    src: url("../public/static/fonts/‏‏Ploni/ploni-light-aaa.otf");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Ploni";
+    src: url("../public/static/fonts/‏‏Ploni/ploni-regular-aaa.otf");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Ploni";
+    src: url("../public/static/fonts/‏‏Ploni/ploni-demibold-aaa.otf");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Ploni";
+    src: url("../public/static/fonts/‏‏Ploni/ploni-demibold-aaa.otf");
+    font-weight: 600;
+}
+@font-face {
+    src: url("../public/static/fonts/‏‏Ploni/ploni-bold-aaa.otf");
+    font-weight: 800;
+    font-family: "Ploni";
+}
+
+html,
+body {
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    font-family: "Ploni";
+}
+* {
+    font-family: inherit;
+}
+/* ScrollBar CSS */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $mainColor;
+    border-radius: 15px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+/* End Of ScrollBar CSS */
+p {
+    line-height: 1.6;
+}
+
+*:required:after {
+    content: "*";
+    color: $danger;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+}
+.errorP {
+    text-align: center;
+    color: $danger;
+}
+.successP {
+    text-align: center;
+    color: $succes;
+}
+.loadingP {
+    text-align: center;
+    color: black;
+}
+button {
+    cursor: pointer;
+    border: none;
+    padding: 7px 10px;
+    margin: 0 5px;
+    background-color: $mainColor;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    &:hover {
+        background-color: $secondaryColor;
+        color: white;
+    }
+}
+a {
+    text-decoration: none;
+}
+input {
+    padding: 15px;
+    font-size: 1.2rem;
+    width: max-content;
+    width: 100%;
+    border-radius: 15px;
+
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill {
+        box-shadow: 0 0 0 30px white inset !important;
+        outline: none;
+    }
+}
+select {
+    padding: 5px;
+    border-radius: 10px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    margin-top: 50px;
+    width: 100%;
+    .formTitle {
+        font-size: 1.5rem;
+    }
+    button {
+        padding: 10px 20px;
+        border: none;
+        background-color: green;
+        color: white;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: rgb(48, 153, 48);
+        }
+    }
+    div {
+        display: flex;
+        // flex-direction: column;
+        position: relative;
+        width: 100%;
+        div {
+            margin: 5px;
+            position: relative;
+            width: 50%;
+            button {
+                background-color: transparent;
+                color: black;
+                height: 100%;
+                border-radius: 5px;
+                margin: 0;
+                border: 2px solid black;
+                width: 100%;
+                &:hover {
+                    background-color: whitesmoke;
+                }
+            }
+            label {
+                position: absolute;
+                top: -10px;
+                right: 15px;
+                padding: 0 5px;
+                background: white;
+                font-size: 1rem;
+                width: max-content;
+            }
+            input,
+            textarea,
+            select {
+                padding: 15px 10px;
+                border-radius: 5px;
+                border: 2px solid black;
+                font-size: 1.2rem;
+                width: 100%;
+                resize: vertical;
+            }
+        }
+    }
+}

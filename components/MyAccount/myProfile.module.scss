@@ -1,0 +1,26 @@
+.MyProfile {
+    .formWrapper {
+        width: 50%;
+        margin: 0 auto;
+        .changePassQuery {
+            button {
+                font-size: 1rem;
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+        .section {
+            div {
+                i {
+                    position: absolute;
+                    top: 50%;
+                    left: 5px;
+                    max-height: 21px;
+                    cursor: pointer;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}

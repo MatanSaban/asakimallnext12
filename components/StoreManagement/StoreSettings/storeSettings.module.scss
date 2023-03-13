@@ -1,0 +1,109 @@
+@import "../../../styles/colors";
+.pageContent {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: space-around;
+    > div {
+        width: 90%;
+        padding: 0;
+        margin: 0 auto;
+    }
+    .formWrapper {
+        form {
+            .section {
+                div.mainImage {
+                    width: 100%;
+                    div {
+                        width: 100%;
+                        img {
+                            width: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                }
+                .galleryWrapper {
+                    width: 100%;
+                    .gallery {
+                        width: 100%;
+                        margin: 0;
+                        > div {
+                            margin: 0;
+                            flex-direction: column;
+                            width: 100%;
+                            position: relative;
+                            button {
+                                width: 100%;
+                                height: fit-content;
+                            }
+                            .imageGallery {
+                                width: 100%;
+                                border: 2px solid black;
+                                border-top: 0;
+                                margin: 0 auto;
+                                border-radius: 10px;
+                                flex-wrap: nowrap;
+                                height: fit-content;
+                                overflow-x: auto;
+                                max-width: 600px;
+                                position: relative;
+                                div {
+                                    position: relative;
+                                    margin: 5px;
+                                    padding: 5px;
+                                    border: 1px solid black;
+                                    border-radius: 5px;
+                                    width: fit-content;
+                                    i {
+                                        cursor: pointer;
+                                        color: red;
+                                        position: absolute;
+                                        top: 5px;
+                                        left: 5px;
+                                    }
+                                    img {
+                                        object-fit: contain;
+                                    }
+                                }
+                            }
+                        }
+                        label {
+                            z-index: 5;
+                        }
+                        #multiple {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            > div {
+                > div {
+                    width: 100%;
+                    margin: 0 0 10px 0;
+                }
+            }
+        }
+    }
+}
+/* StoreSettings */
+.publishStore,
+.dangerZone {
+    border: 1px solid black;
+    width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    h2 {
+        margin: 0;
+    }
+    button {
+        color: white;
+    }
+}
+.dangerZone {
+    border: 2px dotted red;
+    button {
+        &:hover {
+            background-color: $danger;
+        }
+    }
+}

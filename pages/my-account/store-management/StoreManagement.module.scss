@@ -1,0 +1,120 @@
+@import "../../../styles/colors";
+.storeManagmentPage {
+    .storeMain {
+        .storeData {
+            h2 {
+                background-color: rgb(221, 218, 218);
+                width: fit-content;
+                margin: 0 auto;
+                padding: 10px;
+                border-radius: 10px 10px 0 0;
+            }
+            .storeDetails {
+                display: flex;
+                justify-content: space-between;
+                background-color: rgb(221, 218, 218);
+                border-radius: 20px;
+                padding: 20px;
+                margin: 0 100px;
+                box-shadow: 0 0 20px 0px #00000020;
+                div {
+                    p {
+                        text-align: center;
+                    }
+                }
+            }
+            .storePromotions {
+                display: flex;
+                justify-content: space-around;
+                h3 {
+                    font-size: 1.1rem;
+                }
+                p {
+                    font-size: 0.9rem;
+                }
+                button {
+                    font-size: 1rem;
+                }
+                > div {
+                    background-color: rgb(233, 140, 140);
+                    color: white;
+                    text-shadow: 0 0 10px black;
+                    width: 300px;
+                    height: 300px;
+                    margin: 50px auto;
+                    padding: 15px;
+                    border-radius: 50%;
+                    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.22);
+                    font-size: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .promotions {
+                    background-color: #7ea6f0;
+                }
+                .noProducts {
+                    button {
+                        font-size: 1rem;
+                        padding: 10px 15px;
+                        width: fit-content;
+                        background-color: rgb(77, 157, 77);
+                        &:hover {
+                            background-color: rgb(45, 172, 45);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.storeManagmentPage {
+    display: flex;
+    justify-content: flex-start;
+
+    main {
+        margin: 50px auto;
+        width: 70%;
+        text-align: center;
+    }
+    aside {
+        width: 15%;
+        padding: 50px 0 0 0;
+        z-index: 2;
+        background: linear-gradient(290deg, whitesmoke, white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        padding-top: 150px;
+        ul {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            li {
+                margin: 10px auto;
+                width: 100%;
+                text-align: center;
+                ul {
+                    padding: 0 10px 0 0;
+                }
+                button {
+                    background-color: $secondaryColor;
+                    color: white;
+                    font-size: 1rem;
+                    padding: 5px;
+                    width: 150px;
+                    transition: all 0.3s ease;
+                    &:hover {
+                        background-color: $mainColor;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

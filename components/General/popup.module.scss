@@ -1,0 +1,39 @@
+.popupWrapper {
+    width: 100vw;
+    height: 100vw;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+    background-color: #ffffff40;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: all 0.3s ease;
+}
+.closePopupWrapper {
+    backdrop-filter: 3px;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+.popup {
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 0 0 10px black;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    margin-top: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+.closePopup {
+    margin-top: -50px;
+    opacity: 0;
+    z-index: -1;
+}

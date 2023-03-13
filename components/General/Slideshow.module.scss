@@ -1,0 +1,104 @@
+.slideshow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
+    .bigImageWrapper {
+        position: relative;
+        height: 300px;
+        width: 100%;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        .arrow {
+            background-color: #ffffff40;
+            z-index: 99;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1;
+            transition: all 0.2s ease;
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+        }
+        .left {
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            transform: translate(0%, -50%);
+            box-shadow: 0 0 10px black;
+            z-index: 99;
+        }
+        .right {
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            transform: translate(0%, -50%);
+            box-shadow: 0 0 10px black;
+            z-index: 99;
+        }
+
+        .bigImage {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            height: fit-content;
+            width: 100%;
+            img {
+                height: fit-content;
+                width: 300px;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                margin: 0;
+            }
+        }
+    }
+    .slider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        position: relative;
+        width: 100%;
+        .sliderImages {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-y: hidden;
+            overflow-x: auto;
+            margin: 0;
+            .sliderImageWrapper {
+                cursor: pointer;
+                margin: 0 5px;
+                transition: transform 0.2s ease;
+                &:first-child {
+                    margin-right: 0px;
+                    margin-left: 5px;
+                }
+                &:last-child {
+                    margin-left: 0px;
+                    margin-right: 5px;
+                }
+                &:hover {
+                    transform: scale(1.2);
+                }
+                img {
+                }
+            }
+        }
+    }
+}
